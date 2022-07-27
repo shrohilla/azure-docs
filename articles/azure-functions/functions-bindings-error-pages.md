@@ -3,7 +3,7 @@ title: Azure Functions error handling and retry guidance
 description: Learn to handle errors and retry events in Azure Functions with links to specific binding errors, including information on retry policies.
 
 ms.topic: conceptual
-ms.date: 06/09/2022
+ms.date: 07/28/2022
 zone_pivot_groups: programming-languages-set-functions-lang-workers
 ---
 
@@ -14,7 +14,7 @@ Handling errors in Azure Functions is important to avoid lost data, missed event
 This article describes general strategies for error handling and the available retry strategies. 
 
 > [!IMPORTANT]
-> The retry policy support in the runtime for triggers other than Timer and Event Hubs is being removed after this feature becomes generally available (GA). Preview retry policy support for all triggers other than Timer and Event Hubs will be removed in October 2022. 
+> The retry policy support in the runtime for triggers other than Timer, Event Hubs and Kafka is being removed after this feature becomes generally available (GA). Preview retry policy support for all triggers other than Timer, Event Hubs and Kafka will be removed in October 2022. 
 
 ## Handling errors
 
@@ -57,6 +57,7 @@ There are two kinds of retries available for your functions: built-in retry beha
 | RabbitMQ | [Binding extension](functions-bindings-rabbitmq-trigger.md#dead-letter-queues) | [Dead letter queue](https://www.rabbitmq.com/dlx.html) | 
 | Service Bus | [Binding extension](../service-bus-messaging/service-bus-dead-letter-queues.md) | [Dead letter queue](../service-bus-messaging/service-bus-dead-letter-queues.md#maximum-delivery-count) | 
 |Timer | [Retry policies](#retry-policies) | Function-level |
+|Kafka | [Retry policies](#retry-policies) | Function-level |
 
 ### Retry policies
 
